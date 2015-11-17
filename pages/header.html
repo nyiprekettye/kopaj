@@ -1,11 +1,32 @@
 
 <template name="header">
+<div id="header">
  <h1>Welcome to Meteor!</h1>
-{{#if currentUser}}
-  {{> dashboard}}
-{{else}}
-  {{> register}}
-  {{> login}}
-{{/if}}
+	{{#if currentUser}}
+	  {{> dashboard}}
+	{{else}}
+	  {{> register}}
+	  {{> login}}
+	{{/if}}
+</div>
+</template>
+<template name="register">
+ <form>
+ 	<input type="text" id="email">
+ 	<input type="password" id="password">
+ 	<input type="submit" value="Register">
+ </form>
+</template>
 
+<template name="login">
+ <form>
+ 	<input type="text" id="login-email" value="valami@gmail.com">
+ 	<input type="password" id="login-password" value="asd">
+ 	<input type="submit" value="Login">
+ </form>
+</template>
+
+<template name="dashboard">
+ <div id="currentUserEmail">{{getAddress }}</div>
+ <p><a href="#" class="logout">logout</a></p>
 </template>

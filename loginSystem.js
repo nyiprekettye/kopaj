@@ -48,7 +48,7 @@ if (Meteor.isClient) {
   });
   Template.dashboard.helpers({
 
-    getAddress: function(userId) {
+    getAddress: function() {
       var user = null;
       user= Meteor.user().emails[0].address;
       if (user != null){
