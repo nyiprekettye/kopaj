@@ -36,8 +36,7 @@ if (Meteor.isClient) {
       Meteor.loginWithPassword(emailVar, passwordVar);
       console.log('Logged in.');
 
-      var userVar = Meteor.user().emails[0].address;
-      template.find('#currentUserEmail').value = userVar; 
+   
     }
   });
 
@@ -50,18 +49,13 @@ if (Meteor.isClient) {
   Template.dashboard.helpers({
 
     getAddress: function(userId) {
-
-    var user = Meteor.users.findOne({_id: userId});
-
-    if(user) {
-
-      return user.profile.displayName ? user.profile.displayName : user.emails[0].getAddress;
-
+      var user = null;
+      user= Meteor.user().emails[0].address;
+      if (user != null){
+        return user;
+      }else {
+        return 'A ghost...';
+      }
     }
-
-    return 'A ghost...';
-
-    }
-
   });
 }
