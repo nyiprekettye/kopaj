@@ -46,5 +46,22 @@ if (Meteor.isClient) {
       event.preventDefault();
       Meteor.logout();
     }
-  })
+  });
+  Template.dashboard.helpers({
+
+    getAddress: function(userId) {
+
+    var user = Meteor.users.findOne({_id: userId});
+
+    if(user) {
+
+      return user.profile.displayName ? user.profile.displayName : user.emails[0].getAddress;
+
+    }
+
+    return 'A ghost...';
+
+    }
+
+  });
 }

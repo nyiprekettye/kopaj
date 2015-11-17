@@ -1,0 +1,11 @@
+
+<template name="header">
+ <h1>Welcome to Meteor!</h1>
+{{#if currentUser}}
+  {{> dashboard}}
+{{else}}
+  {{> register}}
+  {{> login}}
+{{/if}}
+
+</template>

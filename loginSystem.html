@@ -3,13 +3,7 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-{{#if currentUser}}
-  {{> dashboard}}
-{{else}}
-  {{> register}}
-  {{> login}}
-{{/if}}
+	{{> header}}
 </body>
 
 <template name="register">
