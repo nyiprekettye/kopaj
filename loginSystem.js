@@ -35,6 +35,9 @@ if (Meteor.isClient) {
       var passwordVar = template.find('#login-password').value; 
       Meteor.loginWithPassword(emailVar, passwordVar);
       console.log('Logged in.');
+
+      var userVar = Meteor.user().emails[0].address;
+      template.find('#currentUserEmail').value = userVar; 
     }
   });
 
