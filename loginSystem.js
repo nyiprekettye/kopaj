@@ -19,6 +19,7 @@ if (Meteor.isClient) {
           password: passwordVar
         })
       } else {
+        alert('Invalid e-mail');
         console.log('Invalid e-mail.');
       }
 
