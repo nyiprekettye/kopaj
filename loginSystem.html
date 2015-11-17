@@ -3,26 +3,6 @@
 </head>
 
 <body>
-	{{> header}}
+	{{> templateHeader}}
 </body>
 
-<template name="register">
- <form>
- 	<input type="text" id="email">
- 	<input type="password" id="password">
- 	<input type="submit" value="Register">
- </form>
-</template>
-
-<template name="login">
- <form>
- 	<input type="text" id="login-email" value="valami@gmail.com">
- 	<input type="password" id="login-password" value="asd">
- 	<input type="submit" value="Login">
- </form>
-</template>
-
-<template name="dashboard">
- <div id="currentUserEmail">{{getAddress userId}}</div>
- <p><a href="#" class="logout">logout</a></p>
-</template>
