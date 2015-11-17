@@ -5,7 +5,7 @@ if (Meteor.isClient) {
       event.preventDefault();
       var emailVar = template.find('#email').value;
       var passwordVar = template.find('#password').value; 
-      console.log('Form submitted.');
+      console.log('Register.');
       Accounts.createUser({
         email: emailVar,
         password: passwordVar
